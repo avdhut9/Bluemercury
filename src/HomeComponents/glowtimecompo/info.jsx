@@ -1,5 +1,6 @@
-import { Box, Button, ButtonGroup, HStack, Image, Text, VStack } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Container, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react"
 import { useState } from "react"
+import {StarIcon} from "@chakra-ui/icons"
 
 const data=[{
     image:"https://cdn.shopify.com/s/files/1/0283/0185/2747/products/variant_images-color-solarflare-670959115386-1_235x235_crop_center.jpg?v=1658817362",
@@ -27,7 +28,8 @@ export default function Info(){
 
 
     return(
-    <VStack w="100%" bg="white"  >
+        <Container>
+    <VStack w="100%" bg="white" >
        {page==1? <VStack>
    <Image src={data1.image}/>
     <Text>{data1.title}</Text>
@@ -41,12 +43,16 @@ export default function Info(){
     <Text>{data3.title}</Text>
     <Text>{data3.des}</Text>
     </VStack>}
-<Box>
-<HStack>{[0,1,2,3,4].map((ele)=>
-<ButtonGroup size="md" variant="ghost" isActive="false">{ele==0?<Button onClick={()=>setpage(page-1)} disabled={page==1}>{"<"}</Button>:ele==4?<Button onClick={()=>setpage(page+1)} disabled={page==3}>{">"}</Button>:<Button>{but}</Button>}</ButtonGroup>
+<Box pt={9}>
+<Flex>{[0,1,2,3,4].map((ele)=>
+<ButtonGroup size="lg" variant="ghost" >{ele==0?<Button onClick={()=>setpage(page-1)} disabled={page==1}>{"<"}</Button>:ele==4?<Button onClick={()=>setpage(page+1)} disabled={page==3}>{">"}</Button>:<Button>{but}</Button>}</ButtonGroup>
 )}
-</HStack>
+</Flex>
 </Box>
+{/* <Box>{[1,2,3,4,5].map((ele,i)=>
+    <StarIcon/>
+)}</Box> */}
     </VStack>
+    </Container>
     )
 }

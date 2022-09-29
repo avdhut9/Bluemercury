@@ -9,12 +9,12 @@ export default function Glowtime(){
             <Text fontSize={30} color="gray.600" letterSpacing={5}>GLOW TIME</Text >
             <Text color="gray.500" >Nourishing, ultra-hydrating formulas for limitless looks.</Text>
         </VStack>
-         <Container maxW="65%" mt={5}>
-            <Flex gap={10} justifyContent="center">
+         <Box maxW="65%" mt={5} m="auto">
+            <Flex gap={10} justifyContent="center" direction={{sm:"column",md:"column",lg:"row"}}>
             <GlowImage/>
             <Info/>
             </Flex>
-        </Container>
+        </Box>
        </Container>
     )
 }
