@@ -3,12 +3,16 @@ import './App.css';
 import { Box, Container, Image } from '@chakra-ui/react';
 import Home from './pages/Home';
 import AllRoutes from './pages/Allroutes';
+import Navbar from './Navbar/Navbar';
+import { Footer } from './footer';
 
 function App() {
   return (
-   <Box maxW="100%">
+   <Container maxW="100%" p={0}>
+    <Navbar/>
 <AllRoutes/>
-   </Box>
+<Footer/>
+   </Container>
   );
 }
 

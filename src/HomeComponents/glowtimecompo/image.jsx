@@ -1,9 +1,10 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Container, HStack, Image, VStack } from "@chakra-ui/react";
 
 export default function GlowImage(){
     return(
-        <Box w="100%" border="1px">
-            <Image w="100%" src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/9.15_Jane_Iredale_Shop_the_Collection_1000x.progressive.jpg?v=1663164379"/>
-        </Box>
+        <Container w="100%">
+            <Box m="auto" h="380px"  bgImage="url('https://cdn.shopify.com/s/files/1/0283/0185/2747/files/Nest_Indian_Jasmine_Shop_the_Collection_1200x1200_253904f9-535b-40f7-a1e2-e13a030f7a03_600x.progressive.jpg?v=1664387674')"/>
+        
+        </Container>
     )
 }
