@@ -1,5 +1,8 @@
 import { Heading } from "@chakra-ui/react"
 import{Route,Routes} from "react-router-dom"
+import NewItems from "../New"
+import New from "../New"
+
 import Home from "./Home"
 import Login from "./Login"
 import Signup from "./signuppage"
@@ -11,7 +14,7 @@ export default function AllRoutes(){
 <Route path="/" element={<Home/>}/>
 <Route path="/login" element={<Login/>}/>
 <Route path="/register" element={<Signup/>}/>
-<Route/>
+<Route path="/new" element={<NewItems/>}/>
 <Route/>
         </Routes>
     )
