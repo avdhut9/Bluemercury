@@ -1,13 +1,15 @@
 import { Container, Flex, Image, Text, VStack } from "@chakra-ui/react";
 const breakouts={
-    sm:"15px",
-    md:"20px",
-    lg:"25px"
+    sm:"16px",
+    md:"18px",
+    lg:"20px",
+    base:"12px"
 }
 const breakout1={
-    sm:"15px",
-    md:"20px",
-    lg:"25px"
+    sm:"16px",
+    md:"16px",
+    lg:"18px",
+    base:"12px"
 }
 export default function Three(){
     return(

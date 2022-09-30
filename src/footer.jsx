@@ -1,12 +1,17 @@
 import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react"
 
-
+const breakouts={
+    sm:"12px",
+    md:"14px",
+    lg:"16px",
+    base:"10px"
+}
 function Footer(){
     return(
-        <Container color="rgb(47,50,105)"  maxW="100%"  border="1Textx" p={10} >
+        <Container  color="rgb(114,127,148)" maxW="100%"  border="1Textx" p={10} fontSize={breakouts} >
         <Flex gap={50} >
             <Box>
-                <Text fontSize={20}>LET US HELP</Text>
+                <Text >LET US HELP</Text>
                 <Text>Help Center</Text>
                 <Text>Track My Order</Text>
                 <Text>Cancel My Order</Text>
