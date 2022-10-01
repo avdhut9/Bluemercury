@@ -13,7 +13,7 @@ const breakout1={
 }
 export default function Three(){
     return(
-       <Container maxW="95%">
+       <Container maxW="95%" mt={50}>
          <Flex gap="20px">
             <VStack w="100%">
                 <Image src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/samples-content_block_705x705.jpg?v=1614296349"/>

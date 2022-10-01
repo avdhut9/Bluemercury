@@ -1,9 +1,8 @@
-import { Box, Flex, Heading, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import axios from "axios";
-import { useEffect } from "react";
+import { Badge, Box, Button, Container, Flex, Heading, Image, Spacer, Text, VStack } from "@chakra-ui/react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
-import Products from "./NewComponents/Products";
-import Sidebar from "./NewComponents/sidebar";
+import { useParams } from "react-router-dom";
+import { Cartcontext } from "../cartContext/cartContext";
 const data1=[
     {
         "id":1,
@@ -279,46 +278,60 @@ const data1=[
     }
 ]
 const breakouts={
-    base:"12px",
-    sm:"14px",
-    md:"14px",
-    lg:"16px"
+    base:"16px",
+    sm:"20px",
+    md:"25px",
+    lg:"35px"
+}
+const breakouts1={
+    base:"20px",
+    sm:"25px",
+    md:"350px",
+    lg:"45px"
 }
 
-export default function NewItems(){
-    const[state,setstate]=useState(data1)
-    function sorthigh(){
-        
-const update=state.sort((a,b)=>
-b.price-a.price
-)
-console.log(update)
-setstate([...update])
-    }
-    function sortlow(){
-        const update1=state.sort((a,b)=>
-        a.price-b.price
+export default function SingleProduct(){
+    const[data,setdata]=useState(data1)
+    const{state,dispatch}=useContext(Cartcontext)
+   
+    const {id}=useParams()
+    useEffect(()=>{
+getdata({id})
+    },[])
+    function getdata({id}){
+       const update=data.filter((ele)=>
+ele.id==id
         )
-        setstate([...update1])
+        setdata(...update)
     }
+    function ok(value){
+        return({
+            type:"add",
+            payload:value
+        })
+        }
+        function add(data){
+dispatch(ok(data))
+        }
+        function exists(id){
+            if(data1.find((ele)=>ele.id==id)){
+                return true
+            }
+            return false
+        }
+
     return(
-        <Box pb={100} pt={100} fontSize={breakouts}>
-          <Box pr={10} pb={10}>  <Flex justify="flex-end">
-            <Menu isLazy>
-  <MenuButton>Sort By</MenuButton>
-  <MenuList>
-    {/* MenuItems are not rendered unless Menu is open */}
-  
-    <MenuItem onClick={sortlow}>Price Low to High</MenuItem>
-    <MenuItem onClick={sorthigh}>Price High to Low</MenuItem>
-  </MenuList>
-</Menu>
-  
-            </Flex></Box>
-          <Flex>
-                <Sidebar/>
-                <Products data={state}/>
-            </Flex>
-        </Box>
+<Container maxW="container.2xl" pt={200} bg="gray.50"  color="rgb(114,127,148)" pb={100} >
+<Flex gap="20px">
+ <Box w="100%" >   <Image w="100%" src={data.image}/></Box>
+    <Spacer/>
+    <VStack bg="white" w="100%" align="flex-start" fontSize={breakouts} letterSpacing={2} p={10} >
+     <Box fontSize={breakouts1} pt={50}>   <Heading>{data.name}</Heading></Box>
+        <Text>{data.des}</Text>
+        <Badge fontSize={breakouts} color="green.500">{`price $${ data.price}`}</Badge>
+      <Box pt={5} w="100%">  <Button  onClick={()=>add(data)} size="lg" bg="rgb(18,40,76)" color="white" w="50%">Add to Bag</Button></Box>
+    </VStack>
+</Flex>
+</Container>
     )
 }
