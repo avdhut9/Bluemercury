@@ -36,7 +36,7 @@ clearInterval(ref.current)
 },5000)
    },[])
     return(
-        <Box pt={20}>
+        <Box pt={100}>
 <Image src={data[count].image}/>
         </Box>
     )

@@ -14,7 +14,7 @@ const breakout1={
 }
 export default function Combine(){
     return(
-        <Container maxW="90%" p={0}>
+        <Container maxW="90%" p={0} mt={50}>
             <Flex gap="30px">
                 <VStack w="100%" align="flex-start"><Image src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/LA_Holiday_SidebySide_1000x625_39833a0d-90bf-469b-891a-d999f340709b_640x.jpg?v=1664387328"/>
                 <Text letterSpacing={3} color="rgb(18,40,76)" fontSize={breakouts}>These sets are a steal!</Text>
