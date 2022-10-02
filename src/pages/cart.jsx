@@ -48,7 +48,7 @@ sum=sum+state[i].price*state[i].qty
         return sum
     }
     return(
-        <Container maxW="container.xl" pt={100} mb={100}>
+        <Container maxW="container.xl" pt={100} mb={100} color="rgb(114,127,148)">
            {state.length==0?<Container ><Image src="http://sastamadda.com/Img/emptycart.png"/></Container>: <Table>
                 <Tr>
                     <Th>Sr.No</Th>

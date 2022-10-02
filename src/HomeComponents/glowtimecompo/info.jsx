@@ -1,6 +1,9 @@
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { Box, Button, ButtonGroup, Container, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react"
 import { useState } from "react"
 import {StarIcon} from "@chakra-ui/icons"
+import Slider from "react-slick"
 
 const data=[{
     image:"https://cdn.shopify.com/s/files/1/0283/0185/2747/products/variant_images-color-solarflare-670959115386-1_235x235_crop_center.jpg?v=1658817362",
@@ -18,41 +21,42 @@ des:"PurePressed® Eye Shadow Palette"
 des:"PurePressed® Eye Shadow Palette"
 }
 ]
-const but="o"
+
 export default function Info(){
-    const[data1,setdata1]=useState(data[0])
-    const[data2,setdata2]=useState(data[1])
-    const[data3,setdata3]=useState(data[2])
-    const[page,setpage]=useState(1)
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        className: "center",
+      
     
-
-
-    return(
-        <Container>
-    <VStack w="100%" bg="white" >
-       {page==1? <VStack>
-   <Image src={data1.image}/>
-    <Text>{data1.title}</Text>
-    <Text>{data1.des}</Text>
-    </VStack>:page==2? <VStack>
-   <Image src={data2.image}/>
-    <Text>{data2.title}</Text>
-    <Text>{data2.des}</Text>
-    </VStack>: <VStack>
-   <Image src={data3.image}/>
-    <Text>{data3.title}</Text>
-    <Text>{data3.des}</Text>
-    </VStack>}
-<Box pt={9}>
-<Flex>{[0,1,2,3,4].map((ele)=>
-<ButtonGroup size="lg" variant="ghost" >{ele==0?<Button onClick={()=>setpage(page-1)} disabled={page==1}>{"<"}</Button>:ele==4?<Button onClick={()=>setpage(page+1)} disabled={page==3}>{">"}</Button>:<Button>{but}</Button>}</ButtonGroup>
+  
+     
+     
+    }
+    const breakouts={
+        base:"300px",
+        sm:"300px",
+        md:"400px",
+        lg:"600px"
+    }
+   return(
+<Container w={breakouts}  bg="white" textAlign="center" color="rgb(114,127,148)" p={5}  >
+    <Image m="auto" src="https://cdn.shopify.com/s/files/1/0283/0185/2747/products/variant_images-size-30ml-840732118327-1_235x235_crop_center.jpg?v=1663175595"/>
+    <Text>NEST NEW YORK</Text>
+    <Text m="auto" textAlign="center" w="60%">Indian Jasmine Perfume Oil
+From $35</Text>
+<VStack >
+<HStack >
+{[1,2,3,4,5].map((ele,i)=>
+<StarIcon  color={i<4?"teal":"gray"}/>
 )}
-</Flex>
-</Box>
-{/* <Box>{[1,2,3,4,5].map((ele,i)=>
-    <StarIcon/>
-)}</Box> */}
-    </VStack>
-    </Container>
-    )
+</HStack>
+</VStack>
+</Container>
+   )
+   
 }

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -8,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { AuthContextProvider } from './HomeComponents/AuthContext/Authcontext';
 import RegisterContextProvider from './HomeComponents/registerContext/registercontext';
 import CartcontextProvider, { Cart } from './cartContext/cartContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider>

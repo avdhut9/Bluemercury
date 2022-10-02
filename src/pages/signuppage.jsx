@@ -43,7 +43,7 @@ export default function Signup(){
         if(state){
           return<Navigate to="/login"/>
         }
-          return <Container  pt={100} mb={200}>
+          return <Container  pt={100} mb={200}  color="rgb(18,40,76)">
             <VStack>
                 <VStack ><Heading letterSpacing={3} >REGISTER</Heading></VStack>
                 <VStack><Text>Please enter your e-mail and password:</Text></VStack>

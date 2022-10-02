@@ -11,7 +11,7 @@ function Footer(){
         <Container  color="rgb(114,127,148)" maxW="100%"  border="1Textx" p={10} fontSize={breakouts} >
         <Flex gap={50} >
             <Box>
-                <Text >LET US HELP</Text>
+                <Text >Bluemercury</Text>
                 <Text>Help Center</Text>
                 <Text>Track My Order</Text>
                 <Text>Cancel My Order</Text>
@@ -31,7 +31,7 @@ function Footer(){
             </Box>
             <Box>
                 <Text>COMMUNITY</Text>
-                <Text>Headphone Zone Merchandise</Text>
+                <Text>Bluemercury</Text>
                 <Text
                 >Trade-Up Program</Text>
                 <Text>The Insider</Text>
@@ -40,9 +40,9 @@ function Footer(){
             <Box>
                 <Text>BEWARE OF FAKES</Text>
                 <Text>Don't get fooled. Look out for smuggled &</Text>
-                <Text>refurbished headTexthones while shopping online.</Text>
-                <Text>Headphone Zone is a professionally run business</Text>
-                <Text>& deals only in 100% genuine headphones.</Text>
+                <Text>refurbished while shopping online.</Text>
+                <Text>Bluemercury is a professionally run business</Text>
+                <Text>& deals only in 100% genuine Products.</Text>
                
             </Box>
             <Box>
@@ -68,9 +68,9 @@ function Footer(){
             
         </Flex>
         <Box mt={5}>
-                <Text>Owned, Operated & Funded by Proud Indians</Text>
+                <Text>Owned, Operated & Funded by Bluemercury</Text>
                 
-                <Text>Copyright ©2011-2022 Headphone Zone.</Text>
+                <Text>Copyright ©2011-2022.</Text>
                 <Text>Everything on this website has been made with a lot of love and hard work. If you copy anything we will hunt you down. We mean it.</Text>
 
             </Box>

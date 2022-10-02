@@ -56,7 +56,7 @@ console.log(data.data)
 if(state.isAuth){
   return<Navigate to="/"/>
 }
-  return <Container pt={100} mb={200}>
+  return <Container pt={100} mb={200}   color="rgb(114,127,148)">
     <VStack>
         <VStack ><Heading letterSpacing={3} >LOGIN</Heading></VStack>
         <VStack><Text>Please enter your e-mail and password:</Text></VStack>
