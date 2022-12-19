@@ -10,7 +10,7 @@ One Page Application Fast & User Friendly
 <h2>Areas of responsibility:</h2>
 Social Sign-in/Sign-up Created Navbar Footer Product page 
 
-Tech Stack: 
+<h2>Tech Stack:<h2/>
 JavaScript | React | ChakraUi
 </div>
 
