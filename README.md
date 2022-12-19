@@ -11,7 +11,7 @@ One Page Application Fast & User Friendly
 Social Sign-in/Sign-up Created Navbar Footer Product page 
 
 <h2>Tech Stack:<h2/>
-JavaScript | React | ChakraUi
+<p>JavaScript | React | ChakraUi<p/>
 </div>
 
 <img src="https://iili.io/DpGQIf.png"/>
