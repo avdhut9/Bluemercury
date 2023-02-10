@@ -50,11 +50,11 @@ onClose()
     }
     return (
       
-        <Box   borderColor='red' as="nav" bg="bg-surface" boxShadow={useColorModeValue('sm', 'sm-dark')} bgColor="white" height="50px" display="flex" justifyContent={{lg:"center"}} alignItems="center" position="fixed" zIndex={1000} w="100%"  >
+        <Box textDecoration="none"   borderColor='red' as="nav" bg="bg-surface" boxShadow={useColorModeValue('sm', 'sm-dark')} bgColor="white" height="50px" display="flex" justifyContent={{lg:"center"}} alignItems="center" position="fixed" zIndex={1000} w="100%"  >
        
         {pc ? (
                 <Box textDecoration="none" textAlign="center" display="flex"  w="100%" color="rgb(114,127,148)" p="10px" >
-              <Link to="/" m="auto" textDecoration="none">  <Image w="150px" h="35px" m="auto" src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x@2x.png?v=1648743182"/></Link>
+          <Box textDecoration="none" m="auto" display="flex" justifyContent="center" alignItems="center" >    <Link to="/" m="auto" textDecoration="none" >  <Image w="150px" h="35px" m="auto"  src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x@2x.png?v=1648743182"/></Link></Box>
                 <Spacer/>
                   <ButtonGroup  variant="link" display="flex" gap="10px" >
                   <Button variant="ghost"   _hover={{bgColor:"white"}}><Link textDecoration="none" to={`/shop`}>SHOP</Link></Button>

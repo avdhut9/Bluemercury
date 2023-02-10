@@ -1,4 +1,4 @@
-import { Badge, Box, Grid, GridItem, HStack, Image, Text } from "@chakra-ui/react";
+import { Badge, Box, Grid, GridItem, HStack, Image, Skeleton, Spinner, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -16,7 +16,8 @@ const breakpoints = {
     '2xl': "repeat(4,1fr)"
   }
 export default function Shop(){
-    const {data}=useSelector((state)=>state.data)
+    const {data,isloading,iserror}=useSelector((state)=>state.data)
+    console.log(isloading)
     let [searchParams, setSearchParams] = useSearchParams(1);
 let x=searchParams.get("page")||1
 console.log(x)
@@ -39,7 +40,15 @@ setSearchParams({page})
         console.log(value)
         setpage(value)
     }
-    return(
+    return(isloading?<Grid pt="100px" w="90%" m="auto"  gap="50px"  justifyContent="space-around" templateColumns={breakpoints}>{Array(12).fill('')?.map((ele)=>
+   <GridItem >
+       <Skeleton
+        height='300px'
+        fadeDuration={4}
+        startColor="rgb(114,147,146)"
+      />
+   </GridItem>
+      )}</Grid>:
         <Box pt="100px" mb="100px" color="rgb(114,127,148)">
 <Grid templateColumns={breakpoints} gap="50px" p="20px" justifyContent="center" >
     {data?.products?.map((ele)=>

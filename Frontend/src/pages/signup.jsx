@@ -46,9 +46,9 @@ export default function Signup(){
         if(issignup){
           return<Navigate to="/login"/>
         }
-          return <Container  pt={100} mb={200}  color="rgb(18,40,76)">
+          return <Container  pt={100} mb={200}   color="rgb(114,127,148)">
             <VStack>
-                <VStack ><Heading letterSpacing={3} >Signup</Heading></VStack>
+                <VStack ><Heading letterSpacing={3} >SIGNUP</Heading></VStack>
                 <VStack><Text>Please enter your credentials</Text></VStack>
               <FormControl>
               <FormLabel>name</FormLabel>

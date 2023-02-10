@@ -22,11 +22,14 @@ const data=res.data;
 
 
 if(page==1){
-    dispatch(succ(data))
+    dispatch(succ(data));
+    localStorage.setItem("bluedata",JSON.stringify(data))
 }else if(page==2){
     dispatch(succ1(data))
+    localStorage.setItem("bluedata1",JSON.stringify(data))
 }else if(page==3){
     dispatch(succ2(data))
+    localStorage.setItem("bluedata2",JSON.stringify(data))
 }
 return data
     }catch(e){
@@ -35,9 +38,8 @@ return data
     }
 }
 export const getdata1=(page=1,limit=12)=>async(dispatch)=>{
-    console.log("ok")
-try{
     dispatch(load)
+try{
 const res=await axios.get(`https://avdhutblumercury.onrender.com/products?page=${page}&limit=${limit}`)
 const data=res.data;
 
