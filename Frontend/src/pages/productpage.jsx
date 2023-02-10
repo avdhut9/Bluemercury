@@ -23,7 +23,8 @@ let breakpoints1={
   }
 export default function ProductPage(){
     const token=JSON.parse(localStorage.getItem("token"))
-    const {id}=useParams()
+    const {id}=useParams();
+    console.log(id)
     const[state,setstate]=useState({})
     const[loading,setloading]=useState(false)
     const toast = useToast()
@@ -88,13 +89,13 @@ const res=await axios({
     url:'https://avdhutblumercury.onrender.com/user/cart',
     data: {
       user:token.userid,
-      cart:{...state,productId:id}
+      cart:{productid:id}
     },
     headers:{
          token:token.token
     }
   });
- 
+ console.log(res.data)
  if(res.data=="unauthorized"){
     localStorage.removeItem("token");
     dispatch(logo)

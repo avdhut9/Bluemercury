@@ -68,9 +68,28 @@ console.log(e.message)
     function total(){
 let sum=0;
 for(let i=0;i<=state?.cart?.length-1;i++){
-    sum=sum+(state?.cart[i].price*state?.cart[i].qty)
+    sum=sum+(state?.cart[i].productid?.price*state?.cart[i].qty)
 };
+
 return sum
+    }
+    async function del(id){
+    try{
+        const res=await axios({
+            method:'delete',
+            url:`https://avdhutblumercury.onrender.com/user/productdel/${id}`,
+            data: {
+              user:token.userid,
+            },
+            headers:{
+                 token:token.token
+            }
+          });
+          console.log(res.data);
+          getdata(false)
+    }catch(e){
+        console.log(e.message)
+    }
     }
     return(loading?<Box pt="100px"><Text mb="50px" textAlign="center" color="rgb(114,127,148)">please Wait....</Text><Grid  w="90%" m="auto"  gap="20px"  justifyContent="space-around" templateColumns="repeat(1,1fr)">{Array(12).fill('')?.map((ele)=>
     <GridItem >
@@ -85,12 +104,12 @@ return sum
 
 {state?.cart?.map((ele)=>
 <Box display="flex" alignItems="center" gap="20px" justifyContent="space-around" p="10px" border='1px' borderColor='gray.200' color="rgb(114,127,148)" flexDirection={breakpoints1} >
-<Image w="100px" src={ele?.image}/>
-<Text w="200px" m="auto">{ele?.name}</Text>
-<Text w="200px" >$ {ele?.price}</Text>
+<Image w="100px" src={ele?.productid?.image}/>
+<Text w="200px" m="auto">{ele?.productid?.name}</Text>
+<Text w="200px" >$ {ele?.productid?.price}</Text>
 <Box m="auto" display="flex" gap="2px" alignItems="center"><Button isDisabled={ele.qty==1} size="sm" onClick={()=>changeqty(-1,ele?._id)}>-</Button><Text>{ele?.qty}</Text><Button onClick={()=>changeqty(1,ele?._id)} size="sm" >+</Button></Box>
-<Text w="200px">Total: $ {ele?.price*ele?.qty}</Text>
-<Button size="sm">Remove</Button>
+<Text w="200px">Total: $ {ele?.productid?.price*ele?.qty}</Text>
+<Button onClick={()=>del(ele._id)} size="sm">Remove</Button>
 </Box>
 
 
