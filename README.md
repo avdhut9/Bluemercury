@@ -13,7 +13,7 @@ for all handling all the network requests redux is used.
 Social Sign-in/Sign-up Created Navbar| Footer |Products page | single-product page|cart page
 
 <h2>Tech Stack:<h2/>
-<p>React | Redux | Express | MongoDb | NodeJs | Mongoose |redux-thunk |thunk<p/>
+<p>React | Redux | Express | MongoDb | NodeJs | Mongoose |redux|thunk<p/>
 </div>
 
 <img src="https://iili.io/DpGQIf.png"/>
